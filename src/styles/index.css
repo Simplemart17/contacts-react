@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -49,43 +53,46 @@ hr {
   background-color: #ffffff;
 }
 
-.tabList:first-child {
-  border-left: 1px solid #cccccc;
-  border-top-left-radius: 5px;
-}
-
 .item-list {
   margin-bottom: 0px;
+  width: 100%;
 }
 
 .tab {
-  width: 2rem;
+  width: 100%;
   background-color: #dbdbdb;
-  border-top: 1px solid #cccccc;
+  border: 1px solid #cccccc;
   display: inline-block;
-  border-left: 0px solid #cccccc;
-  border-right: 1px solid #cccccc;
-  border-bottom: 1px solid #cccccc;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   padding-top: 6px;
   padding-bottom: 6px;
-  padding-right: 10px;
-  padding-left: 6px;
+  padding-right: 6px;
+  padding-left: 10px;
   font-weight: 400;
   position: relative;
   cursor: pointer;
 }
 
-.tab:active {
-  border-top: 3px solid #cccccc;
+.active-tab {
+  border-top: 4px solid #ccc;
+  border-bottom: none;
+  padding-top: 5px;
 }
 
-.tab > span {
-  font-size: 8px;
+.active-tab > span {
+  top: 17px;
+}
+
+.tab-count {
+  font-size: 10px;
   position: absolute;
   top: 20px;
-  left: 20px;
+  left: 75%;
+}
+
+.empty-tab-count {
+  color: #808080;
 }
 
 .contact-wrapper {
@@ -98,11 +105,12 @@ hr {
 
 .contact-list-container {
   background-color: #dbdbdb;
-  width: 98%;
+  width: 100%;
   margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 50px;
+  padding: 40px;
 }
 
 .contact-list-content {
@@ -128,13 +136,14 @@ hr {
   background-color: #dbdbdb;
   z-index: 10;
   width: 90%;
-  left: 1.5rem;
-  top: 2rem;
+  left: 4%;
+  top: 75%;
   box-shadow: inset -4px -1px 5px -1px #b4afaf;
 }
 
 .card-wrapper {
   padding: 15px;
+  display: flex;
 }
 
 .avatar-container {
@@ -151,8 +160,15 @@ hr {
   width: 70%;
 }
 
-.detail-text > h1 {
-  margin-top: 0;
+.detail-text-name {
+  margin: 0;
+  margin-bottom: 15px;
+  color: #929090;
+  text-transform: uppercase;
+}
+
+.detail-text-name > span {
+  text-transform: lowercase;
 }
 
 .detail-text-key {
@@ -171,15 +187,15 @@ hr {
 .detail-label {
   font-weight: 600;
   position: absolute;
-  top: 3rem;
-  left: 27.5rem;
+  top: 20%;
+  left: 80%;
   background-color: #a50303;
   text-align: center;
   color: #f8f8f8;
   padding: 10px;
   transform: rotate(90deg);
   font-size: 10px;
-  width: 27%;
+  width: 30%;
   border-radius: 4px;
 }
 
@@ -191,4 +207,224 @@ hr {
 
 .close-btn-img {
   width: 1.5rem;
+}
+
+/* Reference - https://www.w3schools.com/howto/howto_css_media_query_breakpoints.asp */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .tabList {
+    width: 100%;
+    align-items: center;
+    background-color: #ffffff;
+    flex-wrap: wrap;
+  }
+
+  .item-list {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+  }
+
+  .tab {
+    padding-right: 38px;
+  }
+
+  .contact-list-container {
+    display: block;
+    padding: 40px 0;
+  }
+
+  .detail-card-container {
+    padding-left: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .card-wrapper {
+    padding: 5px 10px;
+    display: block;
+  }
+
+  .avatar-container {
+    width: 15%;
+    padding-right: 0;
+    margin: auto;
+  }
+
+  .detail-text {
+    width: 100%;
+  }
+
+  .detail-text-name {
+    font-size: larger;
+  }
+
+  .detail-label {
+    left: 75%;
+    width: 32%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .contact-list-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .contact-list-content {
+    flex: 1;
+    flex-basis: 0%;
+    flex-basis: 45%;
+  }
+
+  .detail-text-name {
+    font-size: larger;
+  }
+
+  .detail-card-container {
+    width: 107%;
+    left: 1%;
+  }
+
+  .card-wrapper {
+    padding: 8px;
+    display: block;
+  }
+
+  .avatar-container {
+    width: 20%;
+    padding-right: 15px;
+    margin: auto;
+  }
+
+  .detail-text {
+    width: 100%;
+  }
+
+  .detail-label {
+    top: 8%;
+    left: 75%;
+  }
+
+  .tabList {
+    width: 100%;
+    align-items: center;
+    background-color: #ffffff;
+    flex-wrap: wrap;
+  }
+
+  .item-list {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+  }
+
+  .tab {
+    padding-right: 38px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .contact-list-container {
+    display: grid;
+  }
+
+  .detail-text-name {
+    font-size: xx-large;
+  }
+
+  .detail-card-container {
+    width: 160%;
+    left: 4%;
+  }
+
+  .card-wrapper {
+    padding: 15px;
+    display: flex;
+  }
+
+  .avatar-container {
+    width: 15%;
+    padding-right: 15px;
+    margin: 0;
+  }
+
+  .detail-text {
+    width: 70%;
+  }
+
+  .detail-label {
+    top: 20%;
+    left: 80%;
+  }
+
+  .tabList {
+    width: 100%;
+    align-items: center;
+    background-color: #ffffff;
+  }
+
+  .tab {
+    padding-right: 7px;
+    padding-left: 6px;
+  }
+
+  .tab-count {
+    left: 60%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .contact-list-container {
+    display: grid;
+  }
+
+  .detail-text-name {
+    font-size: xx-large;
+  }
+
+  .detail-card-container {
+    width: 90%;
+    left: 4%;
+  }
+
+  .card-wrapper {
+    padding: 15px;
+    display: flex;
+  }
+
+  .avatar-container {
+    width: 15%;
+    padding-right: 15px;
+    margin: 0;
+  }
+
+  .detail-text {
+    width: 70%;
+  }
+
+  .detail-label {
+    top: 20%;
+    left: 80%;
+  }
+
+  .tabList {
+    width: 100%;
+    align-items: center;
+    background-color: #ffffff;
+  }
+
+  .tab {
+    padding-right: 7px;
+    padding-left: 6px;
+  }
+
+  .tab-count {
+    left: 60%;
+  }
 }
