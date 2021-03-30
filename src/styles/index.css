@@ -7,6 +7,188 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.App {
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+hr {
+  margin: 0;
+  border: 1px dashed #cccccc;
+}
+
+.text-center {
   text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.block {
+  display: block;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.tabWrapper {
+  background-color: #ffffff;
+}
+
+.tabList {
+  width: 100%;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.tabList:first-child {
+  border-left: 1px solid #cccccc;
+  border-top-left-radius: 5px;
+}
+
+.item-list {
+  margin-bottom: 0px;
+}
+
+.tab {
+  width: 2rem;
+  background-color: #dbdbdb;
+  border-top: 1px solid #cccccc;
+  display: inline-block;
+  border-left: 0px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 10px;
+  padding-left: 6px;
+  font-weight: 400;
+  position: relative;
+  cursor: pointer;
+}
+
+.tab:active {
+  border-top: 3px solid #cccccc;
+}
+
+.tab > span {
+  font-size: 8px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.contact-wrapper {
+  margin-top: 10px;
+}
+
+.contact-wrapper > h1 {
+  font-size: large;
+}
+
+.contact-list-container {
+  background-color: #dbdbdb;
+  width: 98%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 50px;
+}
+
+.contact-list-content {
+  padding: 0 1rem;
+  position: relative;
+}
+
+.contact-list-text {
+  padding: 10px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.contact-list-text > span {
+  text-transform: uppercase;
+}
+
+.detail-card-container {
+  padding-left: 5px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #dbdbdb;
+  z-index: 10;
+  width: 90%;
+  left: 1.5rem;
+  top: 2rem;
+  box-shadow: inset -4px -1px 5px -1px #b4afaf;
+}
+
+.card-wrapper {
+  padding: 15px;
+}
+
+.avatar-container {
+  width: 15%;
+  padding-right: 15px;
+}
+
+.avatar {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.detail-text {
+  width: 70%;
+}
+
+.detail-text > h1 {
+  margin-top: 0;
+}
+
+.detail-text-key {
+  font-weight: 500;
+}
+
+.detail-text-value {
+  font-weight: lighter;
+  width: 80%;
+}
+
+.flex-space-between {
+  justify-content: space-between;
+}
+
+.detail-label {
+  font-weight: 600;
+  position: absolute;
+  top: 3rem;
+  left: 27.5rem;
+  background-color: #a50303;
+  text-align: center;
+  color: #f8f8f8;
+  padding: 10px;
+  transform: rotate(90deg);
+  font-size: 10px;
+  width: 27%;
+  border-radius: 4px;
+}
+
+.close-btn {
+  position: absolute;
+  cursor: pointer;
+  top: 4px;
+}
+
+.close-btn-img {
+  width: 1.5rem;
 }
