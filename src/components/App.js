@@ -1,11 +1,5 @@
-import Routes from '../routes/index'
+import Contact from '../pages/contacts';
 
-const App = () => {
-  return (
-    <div className="App">
-      <Routes />
-    </div>
-  )
-}
+const App = () => <Contact />;
 
-export default App
+export default App;
