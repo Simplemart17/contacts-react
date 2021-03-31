@@ -1,4 +1,14 @@
+import { filterContacts } from '../utils/contactFilter';
+
+/**
+ *
+ * @param {Function} action
+ * @param {String} status
+ * @param {Array} contactList
+ * @returns {JSX}
+ */
 const ContactTab = ({ action, status, contactLists }) => {
+  // Generate array of all alphabets using array method and string char code
   const alpha = Array.from(Array(26)).map((_, i) => i + 97);
   const alphabet = alpha.map((x) => String.fromCharCode(x));
 
@@ -6,9 +16,7 @@ const ContactTab = ({ action, status, contactLists }) => {
     <div className="tabWrapper">
       <ul className="flex tabList">
         {alphabet.map((alp, i) => {
-          const filteredContacts = contactLists.filter((data) =>
-            data.name.first.startsWith(alp.toUpperCase()),
-          );
+          const filteredContacts = filterContacts(contactLists, alp);
 
           return (
             <li className="item-list" key={i}>

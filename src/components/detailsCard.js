@@ -1,5 +1,11 @@
 import cancelBtn from '../assets/cancel.svg';
 
+/**
+ * @description - Contact detail card
+ * @param {Object} detailsInfo
+ * @param {Function} closeDetailCard
+ * @returns {JSX}
+ */
 const DetailsCard = ({ detailsInfo, closeDetailCard }) => (
   <div className="detail-card-container">
     <div className="card-wrapper">

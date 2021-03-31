@@ -1,10 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import ContactTab from '../components/contactTab';
 import ContactList from '../components/contactList';
-import contactArray from '../components/contactsArray';
 
 const Contacts = () => {
   const [activeTab, setActiveTab] = useState('a');
+  const [contactArray, setContactArray] = useState([]);
+
+  useEffect(() => {
+    // get the contacts data by making an API call
+    const fetchContacts = async () => {
+      const {
+        data: { results },
+      } = await axios.get('https://www.randomuser.me/api/?results=500');
+
+      setContactArray(results);
+    };
+    fetchContacts();
+  }, []);
 
   return (
     <div className="contact-wrapper">
