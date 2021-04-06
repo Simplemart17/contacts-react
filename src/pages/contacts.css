@@ -1,0 +1,11 @@
+.contact-wrapper {
+  margin-top: 10px;
+}
+
+.contact-wrapper > h1 {
+  font-size: large;
+}
+
+.contact-padding {
+  padding: 0 2rem;
+}

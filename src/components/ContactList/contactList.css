@@ -1,0 +1,60 @@
+.contact-list-container {
+  background-color: #dbdbdb;
+  width: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 50px;
+  padding: 40px;
+}
+
+.contact-list-content {
+  padding: 0 1rem;
+  position: relative;
+}
+
+.contact-list-text {
+  padding: 10px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.contact-list-text > span {
+  text-transform: uppercase;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .contact-list-container {
+    display: block;
+    padding: 40px 0;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .contact-list-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .contact-list-content {
+    flex: 1;
+    flex-basis: 0%;
+    flex-basis: 45%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .contact-list-container {
+    display: grid;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .contact-list-container {
+    display: grid;
+  }
+}

@@ -1,4 +1,6 @@
-import { filterContacts } from '../utils/contactFilter';
+import { filterContacts } from '../../utils/contactFilter';
+import { configJson } from '../../configJson';
+import './contactTab.css';
 
 /**
  *
@@ -7,15 +9,20 @@ import { filterContacts } from '../utils/contactFilter';
  * @param {Array} contactList
  * @returns {JSX}
  */
-const ContactTab = ({ action, status, contactLists }) => {
-  // Generate array of all alphabets using array method and string char code
-  const alpha = Array.from(Array(26)).map((_, i) => i + 97);
-  const alphabet = alpha.map((x) => String.fromCharCode(x));
+const ContactTab = ({ action, status, contactLists, setToggleCard }) => {
+  const { tabs } = configJson;
+
+  // sets the active tab
+  // close the detail card if any is opened
+  const setActiveTab = (alp) => () => {
+    action(alp);
+    setToggleCard({});
+  };
 
   return (
     <div className="tabWrapper">
       <ul className="flex tabList">
-        {alphabet.map((alp, i) => {
+        {tabs.map((alp, i) => {
           const filteredContacts = filterContacts(contactLists, alp);
 
           return (
@@ -28,7 +35,7 @@ const ContactTab = ({ action, status, contactLists }) => {
                     ? 'empty-tab-count'
                     : ''
                 } tab`}
-                onClick={() => action(alp)}
+                onClick={setActiveTab(alp)}
               >
                 {alp}
                 <span className="tab-count">{filteredContacts.length}</span>

@@ -1,0 +1,130 @@
+.tabWrapper {
+  background-color: #ffffff;
+}
+
+.tabList {
+  width: 100%;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.item-list {
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+.tab {
+  width: 100%;
+  background-color: #dbdbdb;
+  border: 1px solid #cccccc;
+  display: inline-block;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 6px;
+  padding-left: 10px;
+  font-weight: 400;
+  position: relative;
+  cursor: pointer;
+}
+
+.active-tab {
+  border-top: 4px solid #ccc;
+  border-bottom: none;
+  padding-top: 5px;
+}
+
+.active-tab > span {
+  top: 17px;
+}
+
+.tab-count {
+  font-size: 10px;
+  position: absolute;
+  top: 20px;
+  left: 75%;
+}
+
+.empty-tab-count {
+  color: #808080;
+}
+
+/* Reference - https://www.w3schools.com/howto/howto_css_media_query_breakpoints.asp */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .tabList {
+    width: 100%;
+    align-items: center;
+    background-color: #ffffff;
+    flex-wrap: wrap;
+  }
+
+  .item-list {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+  }
+
+  .tab {
+    padding-right: 38px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .tabList {
+    width: 100%;
+    align-items: center;
+    background-color: #ffffff;
+    flex-wrap: wrap;
+  }
+
+  .item-list {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+  }
+
+  .tab {
+    padding-right: 38px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .tabList {
+    width: 100%;
+    align-items: center;
+    background-color: #ffffff;
+  }
+
+  .tab {
+    padding-right: 7px;
+    padding-left: 6px;
+  }
+
+  .tab-count {
+    left: 60%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .tabList {
+    width: 100%;
+    align-items: center;
+    background-color: #ffffff;
+  }
+
+  .tab {
+    padding-right: 7px;
+    padding-left: 6px;
+  }
+
+  .tab-count {
+    left: 60%;
+  }
+}

@@ -1,0 +1,204 @@
+.detail-card-container {
+  padding-left: 5px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #dbdbdb;
+  z-index: 10;
+  width: 90%;
+  left: 4%;
+  top: 75%;
+  box-shadow: inset -4px -1px 5px -1px #b4afaf;
+}
+
+.card-wrapper {
+  padding: 15px;
+  display: flex;
+}
+
+.avatar-container {
+  width: 15%;
+  padding-right: 15px;
+}
+
+.avatar {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.detail-text {
+  width: 70%;
+}
+
+.detail-text-name {
+  margin: 0;
+  margin-bottom: 15px;
+  color: #929090;
+  text-transform: uppercase;
+}
+
+.detail-text-name > span {
+  text-transform: lowercase;
+}
+
+.detail-text-key {
+  font-weight: 500;
+}
+
+.detail-text-value {
+  font-weight: lighter;
+  width: 80%;
+}
+
+.detail-label {
+  font-weight: 600;
+  position: absolute;
+  top: 20%;
+  left: 80%;
+  background-color: #a50303;
+  text-align: center;
+  color: #f8f8f8;
+  padding: 10px;
+  transform: rotate(90deg);
+  font-size: 10px;
+  width: 30%;
+  border-radius: 4px;
+}
+
+.close-btn {
+  position: absolute;
+  cursor: pointer;
+  top: 4px;
+}
+
+.close-btn-img {
+  width: 1.5rem;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .detail-card-container {
+    padding-left: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .card-wrapper {
+    padding: 5px 10px;
+    display: block;
+  }
+
+  .avatar-container {
+    width: 15%;
+    padding-right: 0;
+    margin: auto;
+  }
+
+  .detail-text {
+    width: 100%;
+  }
+
+  .detail-text-name {
+    font-size: larger;
+  }
+
+  .detail-label {
+    left: 75%;
+    width: 32%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .detail-card-container {
+    width: 107%;
+    left: 1%;
+  }
+
+  .card-wrapper {
+    padding: 8px;
+    display: block;
+  }
+
+  .avatar-container {
+    width: 20%;
+    padding-right: 15px;
+    margin: auto;
+  }
+
+  .detail-text-name {
+    font-size: larger;
+  }
+
+  .detail-text {
+    width: 100%;
+  }
+
+  .detail-label {
+    top: 8%;
+    left: 75%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .detail-card-container {
+    width: auto;
+  }
+
+  .card-wrapper {
+    padding: 15px;
+    display: flex;
+  }
+
+  .avatar-container {
+    width: 15%;
+    padding-right: 15px;
+    margin: 0;
+  }
+
+  .detail-text-name {
+    font-size: medium;
+  }
+
+  .detail-text {
+    width: 70%;
+  }
+
+  .detail-label {
+    top: 20%;
+    left: 80%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .detail-card-container {
+    width: 100%;
+    left: 4%;
+  }
+
+  .card-wrapper {
+    padding: 15px;
+    display: flex;
+  }
+
+  .avatar-container {
+    width: 15%;
+    padding-right: 15px;
+    margin: 0;
+  }
+
+  .detail-text-name {
+    font-size: xx-large;
+  }
+
+  .detail-text {
+    width: 70%;
+  }
+
+  .detail-label {
+    top: 20%;
+    left: 80%;
+  }
+}

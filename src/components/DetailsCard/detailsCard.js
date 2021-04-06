@@ -1,4 +1,5 @@
-import cancelBtn from '../assets/cancel.svg';
+import cancelBtn from '../../assets/cancel.svg';
+import './detailsCard.css';
 
 /**
  * @description - Contact detail card

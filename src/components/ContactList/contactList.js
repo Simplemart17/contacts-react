@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import DetailsCard from './detailsCard';
-import { filterContacts } from '../utils/contactFilter';
+import React from 'react';
+import DetailsCard from '../DetailsCard/detailsCard';
+import { filterContacts } from '../../utils/contactFilter';
+import './contactList.css';
 
 /**
  * @description - contact list component displaying lists of contacts per group
@@ -8,10 +9,13 @@ import { filterContacts } from '../utils/contactFilter';
  * @param {String} contactGroup
  * @returns {JSX}
  */
-const ContactList = ({ contactLists, contactGroup }) => {
-  const [toggleCard, setToggleCard] = useState({});
-
-  // Filter conatcts to be grouped
+const ContactList = ({
+  contactLists,
+  contactGroup,
+  toggleContactCard,
+  toggleCard,
+}) => {
+  // Filter contacts to be grouped
   const filteredContacts = filterContacts(contactLists, contactGroup);
 
   return (
@@ -23,24 +27,13 @@ const ContactList = ({ contactLists, contactGroup }) => {
             key={index}
             data-testid="users-list"
           >
-            <p
-              className="contact-list-text"
-              onClick={() =>
-                setToggleCard({
-                  [index]: !toggleCard[index],
-                })
-              }
-            >
+            <p className="contact-list-text" onClick={toggleContactCard(index)}>
               {`${contactInfo.name.first} `}{' '}
               <span>{contactInfo.name.last}</span>
             </p>
             {toggleCard[index] ? (
               <DetailsCard
-                closeDetailCard={() =>
-                  setToggleCard({
-                    [index]: !toggleCard[index],
-                  })
-                }
+                closeDetailCard={toggleContactCard(index)}
                 detailsInfo={contactInfo}
               />
             ) : null}
